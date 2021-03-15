@@ -3,7 +3,7 @@
 
 // prints "hi" in the browser's dev tools console
 console.log("hi");
-var pattern = [2, 2, 4, 3, 2, 1, 2, 4];
+var pattern = [1, 1, 1, 1, 1, 1, 1, 1];
 var progress = 0; 
 var gamePlaying = false;
 var tonePlaying = false;
@@ -38,7 +38,7 @@ function randomize()
 {
   for(let i =0; i<8;i++)
     {
-      pattern[i] = Math.floor(Math.random() * Math.floor(3))+1;
+      pattern[i] = Math.floor(Math.random() * Math.floor(6))+1;
     }
 }
 function stopGame()
@@ -47,11 +47,13 @@ function stopGame()
     gamePlaying = false;
     document.getElementById("stopBtn").classList.add("hidden");
     document.getElementById("startBtn").classList.remove("hidden");
+  
 }
 function loseGame()
 {
   stopGame();
   alert("Game Over. You lost.");
+  clueHoldTime = 1000;
 }
 function winGame()
 {
@@ -65,7 +67,9 @@ const freqMap = {
   1: 261.6,
   2: 329.6,
   3: 392,
-  4: 466.2
+  4: 466.2,
+  5: 530.3,
+  6: 590.6
 }
 function playTone(btn,len){ 
   o.frequency.value = freqMap[btn]

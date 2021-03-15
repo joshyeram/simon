@@ -62,3 +62,19 @@ button
 {
     background:yellow;
 }
+#btn5
+{
+    background: violet;
+}
+#btn5:active, #btn5.lit
+{
+    background:purple;
+}
+#btn6
+{
+    background: gray;
+}
+#btn6:active, #btn6.lit
+{
+    background:black;
+}
